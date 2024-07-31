@@ -12,6 +12,12 @@ set(
     src/main.cpp
 )
 
+# 设置调试模式编译选项
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -g")
+
+# 设置生成类型为调试
+set(CMAKE_BUILD_TYPE Debug)
+
 # Add your header files here
 include_directories(include)
 

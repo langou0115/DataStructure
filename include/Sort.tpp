@@ -2,11 +2,11 @@
 #include "Algorithm.h"
 
 template <class T>
-Sort<T>::Sort(T arr_[], int len_): len(len_) 
+Sort<T>::Sort(T arr[], int len): len_(len) 
 {
-    arr = new T[len];
-    for(int i = 0; i < len; i++){
-        arr[i] = arr_[i];
+    arr_ = new T[len_];
+    for(int i = 0; i < len_; i++){
+        arr_[i] = arr[i];
     }
 }
 
@@ -15,12 +15,12 @@ void InsertSort<T>::sort()
 {
     std::cout << "This is InsertSort" << std::endl;
     int i, j;
-    for(i = 1; i < len; i++){
-        T tmp = arr[i];
-        for(j = i - 1; arr[j] > tmp && j >= 0; j--){
-            arr[j + 1] = arr[j];
+    for(i = 1; i < len_; i++){
+        T tmp = arr_[i];
+        for(j = i - 1; arr_[j] > tmp && j >= 0; j--){
+            arr_[j + 1] = arr_[j];
         }
-        arr[j + 1] = tmp;
+        arr_[j + 1] = tmp;
     }
 }
 
@@ -29,14 +29,14 @@ void ShellSort<T>::sort()
 {
     std::cout << "This is ShellSort" << std::endl;
     int dk, i, j;
-    for(dk = this->len / 2; dk >= 1; dk /= 2){
-        for(i = dk; i < len; i++){
-            if(arr[i] < arr[i - dk]){
-                T tmp = arr[i];
-                for(j = i - dk; j >= 0 && arr[j] > tmp; j -= dk){
-                    arr[j + dk] = arr[j];
+    for(dk = len_ / 2; dk >= 1; dk /= 2){
+        for(i = dk; i < len_; i++){
+            if(arr_[i] < arr_[i - dk]){
+                T tmp = arr_[i];
+                for(j = i - dk; j >= 0 && arr_[j] > tmp; j -= dk){
+                    arr_[j + dk] = arr_[j];
                 }
-                arr[j + dk] = tmp;
+                arr_[j + dk] = tmp;
             }
         }
     }
@@ -45,12 +45,13 @@ void ShellSort<T>::sort()
 template <class T>
 void BubbleSort<T>::sort()
 {
+    std::cout << "This is BubbleSort" << std::endl;
     int i, j;
-    for(int i = 0; i < len; i++){
+    for(int i = 0; i < len_; i++){
         bool flag = false;
-        for(int j = len - 1; j > i; j--){
-            if(arr[j] < arr[j - 1]){
-                my_swap(arr[j], arr[j - 1]);
+        for(int j = len_ - 1; j > i; j--){
+            if(arr_[j] < arr_[j - 1]){
+                my_swap(arr_[j], arr_[j - 1]);
                 flag = true;
             }
         }
@@ -61,15 +62,15 @@ void BubbleSort<T>::sort()
 template <class T>
 int QuickSort<T>::partition(int low, int high)
 {
-    T pivot = arr[low];
+    T pivot = arr_[low];
     while(low < high)
     {
-        while(low < high && arr[high] >= pivot) high--;
-        arr[low] = arr[high];
-        while(low < high && arr[low] <= pivot) low++;
-        arr[high] = arr[low];
+        while(low < high && arr_[high] >= pivot) high--;
+        arr_[low] = arr_[high];
+        while(low < high && arr_[low] <= pivot) low++;
+        arr_[high] = arr_[low];
     }
-    arr[low] = pivot;
+    arr_[low] = pivot;
     return low;
 }
 
@@ -88,51 +89,54 @@ void QuickSort<T>::quickSort(int low, int high)
 template <class T>
 void QuickSort<T>::sort()
 {
-    int low = 0, high = len - 1;
+    std::cout << "This is QuickSort" << std::endl;
+    int low = 0, high = len_ - 1;
     quickSort(low, high);
 }
 
 template <class T>
 void SelectSort<T>::sort()
 {
-    for(int i = 0; i < len; i++){
+    std::cout << "This is SelectSort" << std::endl;
+    for(int i = 0; i < len_; i++){
         int min = i;
-        for(int j = i + 1; j < len; j++){
-            if(arr[j] < arr[min]) min = j;
+        for(int j = i + 1; j < len_; j++){
+            if(arr_[j] < arr_[min]) min = j;
         }
-        if(min != i) my_swap(arr[min], arr[i]);
+        if(min != i) my_swap(arr_[min], arr_[i]);
     }
 }
 
 template <class T>
-void HeapSort<T>::buildHeap(int len_)
+void HeapSort<T>::buildHeap(int len)
 {
-    for(int i = len_ / 2 - 1; i >= 0; i--){
-        heapAdjust(i, len_);
+    for(int i = len / 2 - 1; i >= 0; i--){
+        heapAdjust(i, len);
     }
 }
 
 template <class T>
-void HeapSort<T>::heapAdjust(int idx, int len_)
+void HeapSort<T>::heapAdjust(int idx, int len)
 {
-    T tmp = arr[idx];
-    for(int i = 2 * idx; i < len_; i*=2){
-        if(i < len_ && arr[i] < arr[i + 1]) i++;
-        if(tmp > arr[i]) break;
+    T tmp = arr_[idx];
+    for(int i = 2 * idx; i < len; i*=2){
+        if(i < len && arr_[i] < arr_[i + 1]) i++;
+        if(tmp > arr_[i]) break;
         else{
-            arr[idx] = arr[i];
+            arr_[idx] = arr_[i];
             idx = i;
         }
     }
-    arr[idx] = tmp;
+    arr_[idx] = tmp;
 }
 
 template <class T>
 void HeapSort<T>::sort()
 {
-    buildHeap(len);
-    for(int i = len - 1; i > 0; i--){
-        my_swap(arr[i], arr[0]);
+    std::cout << "This is HeapSort" << std::endl;
+    buildHeap(len_);
+    for(int i = len_ - 1; i > 0; i--){
+        my_swap(arr_[i], arr_[0]);
         heapAdjust(0, i - 1);
     }
 }
@@ -143,15 +147,15 @@ void MergeSort<T>::merge(int l, int mid, int r)
     int n1 = mid - l + 1;
     int n2 = r - mid;
     T larr[n1], rarr[n2];
-    for(int i = 0; i < n1; i++) larr[i] = arr[l + i];
-    for(int i = 0; i < n2; i++) rarr[i] = arr[mid + 1 + i];
+    for(int i = 0; i < n1; i++) larr[i] = arr_[l + i];
+    for(int i = 0; i < n2; i++) rarr[i] = arr_[mid + 1 + i];
     int i = 0, j = 0, k = l;
     while(i < n1 && j < n2){
-        if(rarr[j] > larr[i]) arr[k++] = larr[i++];
-        else arr[k++] = rarr[j++];
+        if(rarr[j] > larr[i]) arr_[k++] = larr[i++];
+        else arr_[k++] = rarr[j++];
     }
-    while(i < n1) arr[k++] = larr[i++];
-    while(j < n2) arr[k++] = rarr[j++];
+    while(i < n1) arr_[k++] = larr[i++];
+    while(j < n2) arr_[k++] = rarr[j++];
 }
 
 template <class T>
@@ -168,5 +172,6 @@ void MergeSort<T>::mergeSort(int l, int r)
 template <class T>
 void MergeSort<T>::sort()
 {
-    mergeSort(0, len - 1);
+    std::cout << "This is MergeSort" << std::endl;
+    mergeSort(0, len_ - 1);
 }
