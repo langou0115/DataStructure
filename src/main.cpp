@@ -1,7 +1,7 @@
+#include "Sort.h"
 #include "Array.h"
+#include "List.h"
 #include <iostream>
-#include <ostream>
-// using namespace std;
 
 int main()
 {
@@ -18,7 +18,8 @@ int main()
     // s->print();
 
     // Array
-    // Array<int> arr;
+    // Array<int> arr(10);
+    // Array<double> arr{1.5, 12.3, 3.9, 5.4, 18.1, 3.3, 7.1, 8.2, 21.3, 19.2};
     // arr.push_back(1);
     // arr.push_back(2);
     // arr.pop_back();
@@ -29,5 +30,19 @@ int main()
     // std::cout << "erase: " << tmp << std::endl;
     // std::cout << arr.size();
     
+    // List
+    // List<int> list;
+    // list.push_back(1);
+    // list.push_back(2);
+    // list.push_front(0);
+    // list.push_front(-1);
+    // list.pop_front();
+    // list.pop_back();
+    // list.insert(2, 27);
+    // list.insert(2, 14);
+    // int tmp = list.erase(3);
+    // std::cout << "Erase: " << tmp << std::endl;
+    // std::cout << list << std::endl;
+    // std::cout << "List Size: "<< list.size() << std::endl;
     return 0;
 }
