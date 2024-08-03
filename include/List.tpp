@@ -2,7 +2,7 @@
 #include <stdexcept>
 
 template <class T>
-void List<T>::push_back(T item)
+void List<T>::push_back(const T& item)
 {
     Node *node = new Node(item);
     if(size_ == 0){
@@ -35,7 +35,7 @@ void List<T>::pop_back()
 }
 
 template <class T>
-void List<T>::push_front(T item)
+void List<T>::push_front(const T& item)
 {
     Node *node = new Node(item);
     if(size_ == 0){
@@ -67,7 +67,7 @@ void List<T>::pop_front()
 }
 
 template <class T>
-void List<T>::insert(int pos, T item)
+void List<T>::insert(int pos, const T& item)
 {
     if(pos <= 0 || pos > size_){
         throw std::out_of_range("Insert out of index");

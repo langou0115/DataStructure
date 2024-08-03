@@ -1,6 +1,7 @@
 #include "Sort.h"
 #include "Array.h"
 #include "List.h"
+#include "Stack.h"
 #include <iostream>
 
 int main()
@@ -44,5 +45,25 @@ int main()
     // std::cout << "Erase: " << tmp << std::endl;
     // std::cout << list << std::endl;
     // std::cout << "List Size: "<< list.size() << std::endl;
+
+    // Stack
+    // Stack<int> st;
+    // if(st.isEmpty()) std::cout << "Empty" << std::endl;
+    // else std::cout << "Not Empty" << std::endl;
+    // st.push(1);
+    // st.push(2);
+    // st.push(5);
+    // if(st.isEmpty()) std::cout << "Empty" << std::endl;
+    // else std::cout << "Not Empty" << std::endl;
+    // std::cout << st.top() << std::endl;
+    // st.pop();
+    // std::cout << st.top() << std::endl;
+    // std::cout << "Stack size: " << st.size() << std::endl;
+    // st.push(7);
+    // st.push(8);
+    // st.push(9);
+    // st.push(10);
+    // st.push(11);
+    // std::cout << st << std::endl;
     return 0;
 }

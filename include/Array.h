@@ -22,9 +22,9 @@ public:
         delete[] data_;
     }
 
-    void push_back(T item);
+    void push_back(const T& item);
     void pop_back();
-    void insert(int pos, T item);
+    void insert(int pos, const T& item);
     T erase(int pos);
     void resize();
     void resize(int size);
@@ -35,25 +35,20 @@ public:
         return size_;
     }
 
-    template<typename U>
-    friend std::ostream& operator<<(std::ostream& os, const Array<U>& arr);
+    friend std::ostream& operator<<(std::ostream& os, const Array<T>& arr){
+        os << "[";
+        for(int i = 0; i < arr.size_ - 1; i++){
+            os << arr[i] << ", ";
+        }
+        if(arr.size_ - 1 >= 0) os << arr[arr.size_ - 1];
+        os << "]";
+        return os;
+    }
 private:
     int size_;
     int capacity_;
     T *data_;
 };
-
-template <typename U>
-std::ostream& operator<<(std::ostream& os, const Array<U>& arr) //传引用减小性能开销
-{
-    os << "[";
-    for(int i = 0; i < arr.size_ - 1; i++){
-        os << arr[i] << ", ";
-    }
-    if(arr.size_ - 1 >= 0) os << arr[arr.size_ - 1];
-    os << "]";
-    return os;
-}
 
 #include "Array.tpp"
 #endif // !_ARRARY_H

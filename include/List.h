@@ -17,17 +17,26 @@ public:
         size_ = 0;
     }
 
-    void push_back(T item);
+    void push_back(const T& item);
     void pop_back();
-    void push_front(T item);
+    void push_front(const T& item);
     void pop_front();
-    void insert(int pos, T item);
+    void insert(int pos, const T& item);
     T erase(int pos);
 
     int size() {return size_;}
     
-    template<typename U>
-    friend std::ostream& operator<<(std::ostream &os, const List<U>& list);
+    friend std::ostream& operator<<(std::ostream &os, const List<T>& list){
+        auto cur = list.head_;
+        os << '[';
+        for(int i = 0; i < list.size_ - 1; i++){
+            os << cur->data_ << " -> ";
+            cur = cur->next_;
+        }
+        if(list.size_ - 1 >= 0) os << cur->data_;
+        os << ']';
+        return os;
+    }
 private:
     struct Node {
         T data_;
@@ -39,20 +48,6 @@ private:
     Node* tail_;
     int size_;
 };
-
-template<typename U>
-std::ostream& operator<<(std::ostream &os, const List<U>& list)
-{
-    auto cur = list.head_;
-    os << '[';
-    for(int i = 0; i < list.size_ - 1; i++){
-        os << cur->data_ << " -> ";
-        cur = cur->next_;
-    }
-    if(list.size_ - 1 >= 0) os << cur->data_;
-    os << ']';
-    return os;
-}
 
 #include "List.tpp"
 #endif // !_LIST_H

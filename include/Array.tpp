@@ -27,7 +27,7 @@ void Array<T>::resize(int size)
 }
 
 template <class T>
-void Array<T>::push_back(T item)
+void Array<T>::push_back(const T& item)
 {
     if(size_ == capacity_){
         resize();
@@ -45,7 +45,7 @@ void Array<T>::pop_back()
 }
 
 template <class T>
-void Array<T>::insert(int pos, T item)
+void Array<T>::insert(int pos, const T& item)
 {
     if(pos < 0 || pos >= size_){
         throw std::out_of_range("insert out of range");
