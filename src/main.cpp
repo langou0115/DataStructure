@@ -2,6 +2,8 @@
 #include "Array.h"
 #include "List.h"
 #include "Stack.h"
+#include "Deque.h"
+#include "Queue.h"
 #include <iostream>
 
 int main()
@@ -65,5 +67,46 @@ int main()
     // st.push(10);
     // st.push(11);
     // std::cout << st << std::endl;
+
+    // Deque
+    // Deque<int> deque;
+    // deque.push_front(1);
+    // deque.push_front(2);
+    // deque.push_front(3);
+    // deque.push_front(4);
+    // deque.push_front(5);
+    // deque.push_front(6);
+    // deque.push_front(7);
+    // deque.push_back(9);
+    // deque.push_back(0);
+    // deque.push_front(8);
+    // deque.pop_front();
+    // deque.pop_front();
+    // deque.pop_front();
+    // deque.pop_back();
+    // deque.pop_back();
+    // std::cout << "front: " << deque.front() << std::endl;
+    // std::cout << "back: " << deque.back() << std::endl;
+    // std::cout << "size: " << deque.size() << std::endl;
+    // std::cout << deque;
+
+    // Queue
+    // Queue<int> que;
+    // que.push(1);
+    // que.push(2);
+    // que.push(3);
+    // que.push(4);
+    // que.push(5);
+    // que.push(6);
+    // que.push(7);
+    // que.push(8);
+    // que.pop();
+    // que.pop();
+    // que.pop();
+    // que.pop();
+    // std::cout << "front: " << que.front() << std::endl;
+    // std::cout << "back: " << que.back() << std::endl;
+    // std::cout << "size: " << que.size() << std::endl;
+    // std::cout << que;
     return 0;
 }

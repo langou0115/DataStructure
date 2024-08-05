@@ -4,15 +4,17 @@
 
 拷贝函数，赋值函数和移动语义也小偷个懒 :yum:
 
-* [X]  数组
-* [X]  链表
-* [X]  栈
-* [ ]  队列
-* [ ]  并查集
-* [ ]  堆
+* [X]  Array
+* [X]  List
+* [X]  Stack
+* [X]  Deque
+* [X]  Queue
+* [ ]  Priority Queue
+* [ ]  KMP
+* [ ]  Disjoint Set
 * [ ]  Prim
 * [ ]  Kruscal
 * [ ]  Dijkstra
 * [ ]  Floyd
-* [ ]  拓补排序
-* [X]  七大排序（插入，希尔，冒泡，快速，选择，堆，二路归并）
+* [ ]  TopoLogical Sorting
+* [X]  Seven Kinds of Sort（Insert，Shell，Bubble，Quick，Select，Heap，Merge）

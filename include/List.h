@@ -23,6 +23,7 @@ public:
     void pop_front();
     void insert(int pos, const T& item);
     T erase(int pos);
+    bool is_empty() const{return size_ == 0;};
 
     int size() {return size_;}
     
