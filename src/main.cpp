@@ -1,10 +1,15 @@
+#include "Graph.h"
 #include "Sort.h"
 #include "Array.h"
 #include "List.h"
 #include "Stack.h"
 #include "Deque.h"
 #include "Queue.h"
+#include "PriorityQueue.h"
+#include "KMP.h"
+#include "DisjointSet.h"
 #include <iostream>
+#include <memory>
 
 int main()
 {
@@ -108,5 +113,38 @@ int main()
     // std::cout << "back: " << que.back() << std::endl;
     // std::cout << "size: " << que.size() << std::endl;
     // std::cout << que;
+
+    // PriorityQueue
+    // PriorityQueue<int> pq;
+    // pq.push(18);
+    // pq.push(2);
+    // pq.push(1);
+    // pq.push(3);
+    // pq.push(5);
+    // pq.push(15);
+    // pq.push(25);
+    // pq.push(7);
+    // pq.push(9);
+    // pq.push(6);
+    // pq.push(11);
+    // pq.push(18);
+    // pq.push(13);
+    // pq.push(0);
+    // pq.pop();
+    // pq.pop();
+    // pq.pop();
+    // pq.pop();
+    // std::cout << "top: " << pq.top() << std::endl;
+    // std::cout << "size: " << pq.size() << std::endl;
+    // std::cout << pq << std::endl;
+    
+    // KMP
+    // kmp("ABABABC", "ABA");
+
+    // DisJoint Set
+    // menu(); // 1 for join, 2 for inquire
+
+    // Prim
+    // prim();
     return 0;
 }

@@ -8,5 +8,4 @@ void my_swap(T &a, T &b)
     a = b;
     b = tmp;
 }
-
 #endif // !_ALGORITHM_H_

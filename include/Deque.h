@@ -41,7 +41,7 @@ public:
     const T& back() const {return data_[(back_ - 1 + capacity_) % capacity_];};
 
     // Check if deque is empty
-    bool is_empty() const{return front_ == back_;};
+    bool empty() const{return front_ == back_;};
 
     // Get the size of the deque
     int size() const{return (back_ - front_ + capacity_) % capacity_;}

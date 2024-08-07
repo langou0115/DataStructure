@@ -30,7 +30,7 @@ void Deque<T>::push_front(T item)
     if((front_ - 1 + capacity_) % capacity_ == back_){
         resize();
     }
-    if(is_empty()){
+    if(empty()){
         front_ = 0;
         back_ = 1;
     }else{

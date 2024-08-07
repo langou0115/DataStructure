@@ -13,7 +13,7 @@ public:
     void pop();
     T& top();
     const T& top() const;
-    bool is_empty() const { return size_ == 0; }
+    bool empty() const { return size_ == 0; }
     int size() const { return size_; }
 
     friend std::ostream& operator<<(std::ostream& os, const Stack<T>& st){

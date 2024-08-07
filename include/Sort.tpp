@@ -119,15 +119,17 @@ template <class T>
 void HeapSort<T>::heapAdjust(int idx, int len)
 {
     T tmp = arr_[idx];
-    for(int i = 2 * idx; i < len; i*=2){
-        if(i < len && arr_[i] < arr_[i + 1]) i++;
-        if(tmp > arr_[i]) break;
+    int child;
+    int i;
+    for(i = idx; 2 * i + 1 < len; i = child){
+        child = 2 * i + 1;
+        if(child + 1 < len && arr_[child] < arr_[child + 1]) child++;
+        if(tmp > arr_[child]) break;
         else{
-            arr_[idx] = arr_[i];
-            idx = i;
+            arr_[i] = arr_[child];
         }
     }
-    arr_[idx] = tmp;
+    arr_[i] = tmp;
 }
 
 template <class T>
@@ -137,7 +139,7 @@ void HeapSort<T>::sort()
     buildHeap(len_);
     for(int i = len_ - 1; i > 0; i--){
         my_swap(arr_[i], arr_[0]);
-        heapAdjust(0, i - 1);
+        heapAdjust(0, i);
     }
 }
 

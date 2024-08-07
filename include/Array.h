@@ -28,10 +28,11 @@ public:
     T erase(int pos);
     void resize();
     void resize(int size);
-    bool is_empty() const{return size_ == 0;};
+    bool empty() const{return size_ == 0;};
 
     T& operator[] (int idx);
     const T& operator[] (int idx) const;
+    
     int size() const{
         return size_;
     }

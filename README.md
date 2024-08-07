@@ -9,10 +9,10 @@
 * [X]  Stack
 * [X]  Deque
 * [X]  Queue
-* [ ]  Priority Queue
-* [ ]  KMP
-* [ ]  Disjoint Set
-* [ ]  Prim
+* [X]  Priority Queue (小根堆)
+* [X]  KMP
+* [X]  Disjoint Set
+* [X]  Prim
 * [ ]  Kruscal
 * [ ]  Dijkstra
 * [ ]  Floyd

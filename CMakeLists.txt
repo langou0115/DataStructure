@@ -10,6 +10,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(
     SOURCES
     src/main.cpp
+    src/disjointset.cpp
+    src/graph.cpp
 )
 
 # 设置调试模式编译选项
