@@ -13,8 +13,8 @@
 * [X]  KMP
 * [X]  Disjoint Set
 * [X]  Prim
-* [ ]  Kruscal
-* [ ]  Dijkstra
-* [ ]  Floyd
-* [ ]  TopoLogical Sorting
+* [X]  Kruscal
+* [X]  Dijkstra
+* [X]  Floyd
+* [X]  TopoLogical Sorting
 * [X]  Seven Kinds of Sort（Insert，Shell，Bubble，Quick，Select，Heap，Merge）

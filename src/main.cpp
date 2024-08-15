@@ -1,4 +1,3 @@
-#include "Graph.h"
 #include "Sort.h"
 #include "Array.h"
 #include "List.h"
@@ -8,6 +7,7 @@
 #include "PriorityQueue.h"
 #include "KMP.h"
 #include "DisjointSet.h"
+#include "Graph.h"
 #include <iostream>
 #include <memory>
 
@@ -146,5 +146,17 @@ int main()
 
     // Prim
     // prim();
+
+    // Kruscal
+    // kruscal();
+
+    // Dijkstra
+    // dijkstra();
+
+    // Floyd
+    // floyd();
+
+    // TopoLogicalSort
+    // topologicalSort();
     return 0;
 }
